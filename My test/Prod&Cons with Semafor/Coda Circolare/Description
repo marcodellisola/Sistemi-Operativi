@@ -1,0 +1,5 @@
+Programma produttori consumatori nel quale buffer (area di memoria di memorizazzione dei dati), è presenta una struct
+formata da un cosidetto coda circolare, quindi con una testa e una coda. Tuttavia la scrittura si effettuerà sempre sulla
+testa e la lettura sempre sulla coda. Questo tipo di meccanismo implica che in presenza di Produttori/Consumatori
+più veloci, questi possano essere rallentati da Produttori/Consumatori più lenti. Questo problema si può risolvere con 
+una buffer vettore.
