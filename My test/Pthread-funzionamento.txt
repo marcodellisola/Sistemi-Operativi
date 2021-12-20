@@ -6,6 +6,7 @@ pthread_exit(NULL);
 //BISOGNA CREARE DEI PHTREAD WORKER AD ESEMPIO: (LE STRUTTURE INIT, DESTROY ECC, SONO UGUALI PER TUTTI)		
 pthread_mutex_t mutex; 							pthread_attr_t attr;
 pthread_mutex_init(&mutex,NULL(valore da inizializzare));		pthread_attr_init(&attr);
+pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_JOINABLE);
 pthread_join(threads[i]); //ATTESTA TERMINAZIONE
 //E PER USARLI SI USA
 pthread_mutex_lock(&mutex);
@@ -21,4 +22,31 @@ pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_JOINABLE);
 struct ProdCons *p = malloc(sizeof(struct ProdCons));
 free(p);
 
+//PER VEDERE ID DEL THREAD 
+int64_t my_id;
+pthread_threadid_np(NULL, &my_id);
+
 I MUTEX E LE VARIABILI CONDITION VANNO INSERIRE ALL'INTERNO DELLA STRUTTURA DI MEMORIA
+
+//MAIN TAMPLATE 
+//allocazione memoria heap
+//inizializzazione mutex
+//inizializzazione variabili condtion
+
+//inizializzazione memoria heap
+//inizializzazione attr
+
+//creazione thread
+//join thread
+
+//destroy attr
+//destroy mutex
+//destroy variabili condition
+//liberazione memoria heap
+//pthread_exit
+
+WORKER THREADS:
+void * nome(void *){
+//typecasting
+//elaborazione
+//pthread_exit
