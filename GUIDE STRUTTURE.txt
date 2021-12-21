@@ -15,3 +15,5 @@
 - La condizione viene verificata con un while in quanto possono sopraggiungere altri processi e bisogna metterli in attesa
 - Gli scrittori hanno un particolare contatore che tiene traccia anche degli scrittori in attesa
 - Prima di rilasciare di nuovo il controllo della risorsa bisogna controllare che non ci siano altri processi simili in attesa in particolare per gli scrittori lo si verifica sulla variabile scrittori wait
+
+FARE ATTENZIONE. CON LETTORE E SCRITTORE SI ENTRA ED ESCE DALL'USO ESCLUSIVO DELLA RISORSA PIÙ VOLTE PER PERMETTERE AGLI ALTRI LETTORI DI LEGGERE E QUINDI VERIFICARE LA CONDIZIONE. PER I PRODUTTORI E CONSUMATORI QUESTO NON AVVIENE, TUTTAVIA BISOGNA FARE ATTENZIONE ALLA STRUTTURA CHE SI USA, IN QUANTO SE SI UNA AD ESEMPIO UN VETTORE DI STATO, SE SI SCRIVE SU PORZIONI DIVERSE DI MEMORIA NON C'È COMPETIZIONE E QUINDI DOBBIAMO PERMETTERE AD ALTRI PRODUTTORI DI ACCEDERE RILASCIANDO L'ACCESSO ALLA RISORSA.
