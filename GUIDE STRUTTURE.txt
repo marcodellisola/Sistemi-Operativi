@@ -1,0 +1,17 @@
+**MONITOR**
+
+- MONITORHOARE: si entra e si esce una sola volta dal monitor
+- MONITOR SIGNAL AND CONTINUE: si entra ed esce più volte dal monitor per lasciare la processo segnalato di mettersi in attesa
+
+**PROD/CONS**
+
+- Si entra e rilascia il mutex una sola volta
+- Prima di uscire dal mutex si effettua direttamente la signal agli scrittori/lettori
+- Le operazioni di condizione da verificare appena entrati nel mutex utilizzano un if
+
+**LETT/SCRITT**
+
+- Si entra ed esce dal mutex dopo aver aggiunto un lettore o scrittore e verificato la condizione
+- La condizione viene verificata con un while in quanto possono sopraggiungere altri processi e bisogna metterli in attesa
+- Gli scrittori hanno un particolare contatore che tiene traccia anche degli scrittori in attesa
+- Prima di rilasciare di nuovo il controllo della risorsa bisogna controllare che non ci siano altri processi simili in attesa in particolare per gli scrittori lo si verifica sulla variabile scrittori wait
